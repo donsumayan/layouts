@@ -1,0 +1,343 @@
+<div class="header fixed">
+    <!-- breadcrumb -->
+    <div class="breadcrumb clear">
+        <ul>
+            <li>Settings</li>
+            <li>Manage Users & Teams </li>
+            <li>User Profile: Enes Gundogdu</li>
+        </ul>
+    </div>
+
+    <!-- back button -->
+    <button mat-button class="back-button">
+        <mat-icon>arrow_back</mat-icon>
+        Back to Users
+    </button>
+
+    <!-- page title -->
+    <div class="page-title">User Profile</div>
+</div>
+
+<div class="container">
+    <div class="spacer"></div>
+    <div class="sidemenu-container">
+        <div class="card sidemenu">
+            <div class="avatar-container">
+                <div class="avatar">
+                    <img src="" alt="">
+                </div>
+            </div>
+            <div class="username">Enes Gundogdu</div>
+            <div class="usertitle">Transaction Manager</div>
+            <div class="menu-items">
+                <div class="center" [class.active]="scrollElementId==='general'">
+                    <button (click)="scrollTo('general')" mat-button>
+                        General
+                    </button>
+                    <div class="scroll-indicator"></div>
+                </div>
+                <div class="center" [class.active]="scrollElementId==='security'">
+                    <button (click)="scrollTo('security')" mat-button>
+                        Security Role and SSO
+                    </button>
+                    <div class="scroll-indicator"></div>
+                </div>
+                <div class="center" [class.active]="scrollElementId==='password'">
+                    <button (click)="scrollTo('password')" mat-button>
+                        Password and Login
+                    </button>
+                    <div class="scroll-indicator"></div>
+                </div>
+                <div class="center" [class.active]="scrollElementId==='teams'">
+                    <button (click)="scrollTo('teams')" mat-button>
+                        Teams
+                    </button>
+                    <div class="scroll-indicator"></div>
+                </div>
+                <div class="center" [class.active]="scrollElementId==='transactions'">
+                    <button (click)="scrollTo('transactions')" mat-button>
+                        Transactions
+                    </button>
+                    <div class="scroll-indicator"></div>
+                </div>
+            </div>
+            <mat-divider></mat-divider>
+            <div class="center mt1">
+                <button mat-button class="w100 deactivate-user">
+                    <mat-icon>pause_circle_filled</mat-icon>
+                    Deactivate User
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="scroll-container">
+
+        <div class="card" #generalCard>
+            <span class="anchor" id="general"></span>
+            <div class="card-header">
+                <mat-icon class="card-icon">group</mat-icon>
+                <div class="title">GENERAL</div>
+                <div class="spacer"></div>
+                <button mat-button *ngIf="generalForm.disabled" (click)="generalForm.enable()">
+                    <mat-icon>edit</mat-icon> Edit
+                </button>
+                <button mat-button *ngIf="generalForm.enabled" (click)="generalForm.disable()">
+                    Cancel
+                </button>
+                <button mat-stroked-button *ngIf="generalForm.enabled" (click)="saveGeneralFormChanges()">
+                    Save Changes
+                </button>
+            </div>
+            <div class="card-content" *ngIf="generalForm.disabled">
+                <div class="line-item">
+                    <div class="title">EMAIL</div>
+                    <div class="detail">me@enes.co</div>
+                    <mat-icon class="active">check_circle</mat-icon>
+                </div>
+
+                <div class="line-item">
+                    <div class="title">EMAIL</div>
+                    <div class="detail">me@enes.co</div>
+                    <mat-icon>check_circle_outline</mat-icon>
+                    <button mat-button class="detail active">Resend welcome email</button>
+                </div>
+
+                <div class="line-item">
+                    <div class="title">FIRST NAME</div>
+                    <div class="detail">Enes</div>
+                </div>
+
+                <div class="line-item">
+                    <div class="title">LAST NAME</div>
+                    <div class="detail">Gundogdu</div>
+                </div>
+
+                <div class="line-item">
+                    <div class="title">PHONE NUMBER</div>
+                    <div class="detail">+1 (312) 543 - 6986</div>
+                </div>
+
+                <div class="line-item">
+                    <div class="title">COMPANY NAME</div>
+                    <div class="detail">Upwork Inc.</div>
+                </div>
+
+                <div class="line-item">
+                    <div class="title">TITLE</div>
+                    <div class="detail">Product Designer</div>
+                </div>
+            </div>
+            <div class="card-content" *ngIf="generalForm.enabled">
+                <form [formGroup]="generalForm" class="generalForm">
+                    <mat-form-field appearance="fill" class="email">
+                        <mat-label>Email</mat-label>
+                        <input matInput formControlName="email" />
+                    </mat-form-field>
+                    <button mat-raised-button class="validateEmail">Validate email</button>
+                    <mat-divider></mat-divider>
+                    <mat-form-field appearance="fill" class="fname">
+                        <mat-label>First Name</mat-label>
+                        <input matInput formControlName="fname" />
+                    </mat-form-field>
+                    <mat-form-field appearance="fill" class="lname">
+                        <mat-label>Last Name</mat-label>
+                        <input matInput formControlName="lname" />
+                    </mat-form-field>
+                    <mat-form-field appearance="fill" class="phone">
+                        <mat-label>Phone Number</mat-label>
+                        <input matInput formControlName="phone" />
+                    </mat-form-field>
+                    <mat-form-field appearance="fill" class="companyName">
+                        <mat-label>Company Name</mat-label>
+                        <input matInput formControlName="companyName" />
+                    </mat-form-field>
+                    <mat-form-field appearance="fill" class="title">
+                        <mat-label>Title</mat-label>
+                        <input matInput formControlName="title" />
+                    </mat-form-field>
+                </form>
+            </div>
+        </div>
+
+        <div class="card" #securityCard>
+            <span class="anchor" id="security"></span>
+            <div class="card-header">
+                <mat-icon>settings</mat-icon>
+                <div class="title">SECURITY ROLE AND SSO</div>
+                <div class="spacer"></div>
+                <button mat-button *ngIf="securityForm.disabled" (click)="securityForm.enable()">
+                    <mat-icon>edit</mat-icon> Edit
+                </button>
+                <button mat-button *ngIf="securityForm.enabled" (click)="securityForm.disable()">
+                    Cancel
+                </button>
+                <button mat-stroked-button *ngIf="securityForm.enabled" (click)="saveSecurityFormChanges()">
+                    Save Changes
+                </button>
+            </div>
+            <div class="card-icon" class="card-content" *ngIf="securityForm.disabled">
+                <div class="line-item">
+                    <div class="title">SECURITY ROLE</div>
+                    <div class="detail">Transaction Manager</div>
+                </div>
+                <mat-divider></mat-divider>
+                <div class="line-item">
+                    <div class="title">SSO ENABLED</div>
+                    <div class="detail">Yes</div>
+                </div>
+
+                <div class="line-item">
+                    <div class="title">SSO Credential</div>
+                    <div class="detail">enes.gundogdu@upwork.com</div>
+                </div>
+            </div>
+
+            <div class="card-content" *ngIf="securityForm.enabled">
+                <form [formGroup]="securityForm" class="securityForm">
+
+                    <label class="label1">Assign Security Role (*)</label>
+                    <mat-form-field appearance="fill" class="roleSelect">
+                        <mat-label>Choose one</mat-label>
+                        <mat-select formControlName="role">
+                            <mat-option value="Transaction Manager">Transaction Manager</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <label class="label2">
+                        You Have selected "{{securityForm.controls.role.value}}" as the security role. Would you like to
+                        setup
+                        a SSO for this user? (*)
+                    </label>
+
+                    <button mat-raised-button class="rYes" [class.active]="securityForm.controls.setSSO.value"
+                        (click)="securityForm.controls.setSSO.setValue(true)">Yes</button>
+                    <button mat-raised-button class="rNo" [class.active]="!securityForm.controls.setSSO.value"
+                        (click)="securityForm.controls.setSSO.setValue(false)">No</button>
+                    <label class="label3">
+                        Enter SSO Credentials (*)
+                    </label>
+                    <mat-form-field appearance="fill" class="ssoIdentity">
+                        <mat-label>SSO Identity</mat-label>
+                        <input matInput formControlName="ssoIdentity" />
+                    </mat-form-field>
+                </form>
+            </div>
+        </div>
+
+        <div class="card" #password>
+            <span class="anchor" id="password"></span>
+            <div class="card-header">
+                <mat-icon class="card-icon">lock</mat-icon>
+                <div class="title">PASSWORD AND LOGIN</div>
+            </div>
+            <div class="card-content">
+                <div class="line-item">
+                    <div class="title">PASSWORD</div>
+                    <div class="detail">Last changed on 06/24/2021 9:23 PM EST</div>
+                    <button mat-button class="detail active">Reset Password</button>
+                </div>
+
+                <div class="line-item">
+                    <div class="title">LOGIN</div>
+                    <div class="detail">Last logged in 06/24/2021 9:23 PM EST</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card teams" #teams>
+            <span class="anchor" id="teams"></span>
+            <div class="card-header">
+                <mat-icon class="card-icon">group</mat-icon>
+                <div class="title">Teams</div>
+            </div>
+            <div class="card-content">
+                <label> This user is added to below teams</label>
+                <br>
+                <br>
+                <div class="line-item-box">
+                    <div class="name">[Team Name]</div>
+
+                    <button mat-icon-button class="active ml1">
+                        <mat-icon>open_in_new</mat-icon>
+                    </button>
+                    <div class="spacer"></div>
+                    <button mat-button class="mr1">
+                        <mat-icon>remove_circle_outline</mat-icon>
+                        Remove from team
+                    </button>
+                    <mat-icon class="mr1">group</mat-icon>
+                    <div class="teamcount" class="mr1">6</div>
+                </div>
+                <div class="line-item-box">
+                    <div class="name">[Team Name]</div>
+
+                    <button mat-icon-button class="active ml1">
+                        <mat-icon>open_in_new</mat-icon>
+                    </button>
+                    <div class="spacer"></div>
+                    <button mat-button class="mr1">
+                        <mat-icon>remove_circle_outline</mat-icon>
+                        Remove from team
+                    </button>
+                    <mat-icon class="mr1">group</mat-icon>
+                    <div class="teamcount" class="mr1">6</div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="card transactions" #transactions>
+            <span class="anchor" id="transactions"></span>
+            <div class="card-header">
+                <mat-icon class="card-icon">article</mat-icon>
+                <div class="title">Transactions</div>
+            </div>
+            <div class="card-content">
+                <label> This user is added to below transactions</label>
+                <br>
+                <br>
+                <div class="line-item-box">
+                    <div class="name">[Transaction Name]</div>
+
+                    <button mat-icon-button class="active ml1">
+                        <mat-icon>open_in_new</mat-icon>
+                    </button>
+                    <div class="spacer"></div>
+                    <div class="transaction-type mr1">
+                        [Transaction Type]<br>
+                        <label class="subtype">[Transaction Subtype]</label>
+                    </div>
+                </div>
+                <div class="line-item-box">
+                    <div class="name">[Transaction Name]</div>
+
+                    <button mat-icon-button class="active ml1">
+                        <mat-icon>open_in_new</mat-icon>
+                    </button>
+                    <div class="spacer"></div>
+                    <div class="transaction-type mr1">
+                        [Transaction Type]<br>
+                        <label class="subtype">[Transaction Subtype]</label>
+                    </div>
+                </div>
+                <div class="line-item-box">
+                    <div class="name">[Transaction Name]</div>
+
+                    <button mat-icon-button class="active ml1">
+                        <mat-icon>open_in_new</mat-icon>
+                    </button>
+                    <div class="spacer"></div>
+                    <div class="transaction-type mr1">
+                        [Transaction Type]<br>
+                        <label class="subtype">[Transaction Subtype]</label>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="spacer"></div>
+</div>
