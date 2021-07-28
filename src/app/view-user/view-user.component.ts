@@ -34,8 +34,7 @@ export class ViewUserComponent {
 
 
   scrollTo(elementId: string) {
-    this.scroller.scrollToAnchor(elementId);
-    this.scrollElementId = elementId;
+    
   }
 
   saveGeneralFormChanges() {

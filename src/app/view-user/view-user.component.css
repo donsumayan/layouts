@@ -287,7 +287,13 @@ mat-icon.active {
 .securityForm {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-areas: "label1 ." "roleSelect roleSelect" "label2 label2" "rYes rNo" "label3 ." "ssoIdentity ssoIdentity";
+    grid-template-areas: 
+        "label1 ."
+        "roleSelect roleSelect"
+        "label2 label2"
+        "radios radios"
+        "label3 ."
+        "ssoIdentity ssoIdentity";
     gap: 1em;
 }
 
@@ -317,6 +323,25 @@ mat-icon.active {
 
 .securityForm .rNo {
     grid-area: rNo;
+}
+.securityForm {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+        "label1 ."
+        "roleSelect roleSelect"
+        "label2 label2"
+        "radios radios"
+        "label3 ."
+        "ssoIdentity ssoIdentity";
+    gap: 1em;
+}
+
+.securityForm .radios{
+    grid-area: radios;
+    display: grid;
+    gap: 1em;
+    grid-template-columns: 1fr 1fr;
 }
 
 .securityForm .ssoIdentity {
@@ -368,7 +393,7 @@ mat-icon.active {
     background-color: #007DFF;
 }
 
-.card.teams, .card-transactions {
+.card.teams, .card.transactions {
     min-height: 400px;
 }
 
@@ -383,4 +408,11 @@ mat-icon.active {
 
 button{
     font-family: 'Inter', sans-serif;
+}
+
+.anchor{
+    position: relative;
+    top: -184;
+    width: 3px;
+    background-color: blue;
 }

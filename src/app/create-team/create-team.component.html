@@ -1,0 +1,139 @@
+<div class="header fixed">
+    <!-- breadcrumb -->
+    <!-- <div class="breadcrumb clear">
+        <ul>
+            <li>Settings</li>
+            <li>Manage Users & Teams </li>
+            <li>User Profile: Enes Gundogdu</li>
+        </ul>
+    </div> -->
+
+    <!-- back button -->
+    <!-- <button mat-button class="back-button">
+        <mat-icon>arrow_back</mat-icon>
+        Back to Users
+    </button> -->
+
+    <!-- page title -->
+    <div class="page-title">User Profile</div>
+</div>
+
+<div class="container">
+    <div class="spacer"></div>
+
+    <div class="left-container">
+
+        <p class="title">Enter team details (*)</p>
+
+        <div class="card">
+            <form>
+                <mat-form-field appearance="fill" class="w100">
+                    <mat-label>Team Name</mat-label>
+                    <input matInput />
+                </mat-form-field>
+                <mat-form-field appearance="fill" class="w100">
+                    <mat-label>Team Description</mat-label>
+                    <input matInput />
+                </mat-form-field>
+            </form>
+        </div>
+
+        <mat-divider class="divider"></mat-divider>
+
+
+        <p class="title">Add team members from existing users (*)</p>
+
+        <mat-form-field class="w100">
+            <input matInput placeholder="Filter users by name, company or title" />
+        </mat-form-field>
+
+        <div class="list">
+            <div class="item">
+                <div class="avatar"></div>
+                <div class="username">[User Name]</div>
+                <div class="spacer"></div>
+                <div>
+                    <div class="usercompany">[User Company]</div>
+                    <div class="usertitle">[User Title]</div>
+                </div>
+                <div class="spacer"></div>
+
+                <div class="role-select">
+                    <mat-select placeholder="Team Member Role">
+                        <mat-option>1sad</mat-option>
+                        <mat-option>2sad</mat-option>
+                        <mat-option>3sad</mat-option>
+                        <mat-option>4sad</mat-option>
+                    </mat-select>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="avatar"></div>
+                <div class="username">[User Name]</div>
+                <div class="spacer"></div>
+                <div>
+                    <div class="usercompany">[User Company]</div>
+                    <div class="usertitle">[User Title]</div>
+                </div>
+                <div class="spacer"></div>
+
+                <div class="role-select">
+                    <mat-select placeholder="Team Member Role">
+                        <mat-option>1sad</mat-option>
+                        <mat-option>2sad</mat-option>
+                        <mat-option>3sad</mat-option>
+                        <mat-option>4sad</mat-option>
+                    </mat-select>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="avatar"></div>
+                <div class="username">[User Name]</div>
+                <div class="spacer"></div>
+                <div>
+                    <div class="usercompany">[User Company]</div>
+                    <div class="usertitle">[User Title]</div>
+                </div>
+                <div class="spacer"></div>
+
+                <div class="role-select">
+                    <mat-select placeholder="Team Member Role">
+                        <mat-option>1sad</mat-option>
+                        <mat-option>2sad</mat-option>
+                        <mat-option>3sad</mat-option>
+                        <mat-option>4sad</mat-option>
+                    </mat-select>
+                </div>
+            </div>
+
+        </div>
+
+        <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]">
+        </mat-paginator>
+
+    </div>
+
+    <div class="right-container">
+        <div class="card team-summary">
+            <div class="team-summary-header">
+                <mat-icon>format_align_left</mat-icon>
+                <div class="title">Team summary</div>
+            </div>
+
+            <div class="content">
+                <div class="empty-content">
+                    <div class="spacer"></div>
+                    <div>
+                        There is no team details yet.
+                    </div>
+                    <div class="spacer"></div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="spacer"></div>
+</div>

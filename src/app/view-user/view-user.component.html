@@ -31,7 +31,7 @@
             <div class="usertitle">Transaction Manager</div>
             <div class="menu-items">
                 <div class="center" [class.active]="scrollElementId==='general'">
-                    <button (click)="scrollTo('general')" mat-button>
+                    <button (click)="scrollTo('security')" mat-button>
                         General
                     </button>
                     <div class="scroll-indicator"></div>
@@ -209,10 +209,19 @@
                         a SSO for this user? (*)
                     </label>
 
-                    <button mat-raised-button class="rYes" [class.active]="securityForm.controls.setSSO.value"
-                        (click)="securityForm.controls.setSSO.setValue(true)">Yes</button>
-                    <button mat-raised-button class="rNo" [class.active]="!securityForm.controls.setSSO.value"
-                        (click)="securityForm.controls.setSSO.setValue(false)">No</button>
+                    <mat-radio-group formControlName="ssoEnabled" class="radios" >
+                        <mat-card fxLayoutAlign="start center" style="cursor: pointer;">
+                            <mat-radio-button color="accent" value="Yes">
+                                Yes
+                            </mat-radio-button>
+                        </mat-card>
+                        <mat-card fxLayoutAlign="start center" style="cursor: pointer;">
+                            <mat-radio-button  value="No" color="accent" >
+                                No
+                            </mat-radio-button>
+                        </mat-card>
+                    </mat-radio-group>
+
                     <label class="label3">
                         Enter SSO Credentials (*)
                     </label>
