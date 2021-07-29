@@ -21,7 +21,7 @@
     width: calc(100vw - 6em);
     display: flex;
     align-content: center;
-    margin: 52px 0;
+    margin: 52px 0  ;
 }
 
 .card, .list .item {

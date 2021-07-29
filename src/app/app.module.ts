@@ -15,11 +15,13 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { AppComponent } from './app.component';
 import { ViewUserComponent } from './view-user/view-user.component';
 import { CreateTeamComponent } from './create-team/create-team.component';
+import { ViewTeamComponent } from './view-team/view-team.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ViewUserComponent,
+    ViewTeamComponent,
     CreateTeamComponent,
   ],
   imports: [

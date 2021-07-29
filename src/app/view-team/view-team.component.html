@@ -1,0 +1,212 @@
+<div class="header fixed">
+    <!-- breadcrumb -->
+    <div class="breadcrumb clear">
+        <ul>
+            <li>Settings</li>
+            <li>Manage Users & Teams </li>
+            <li>Team Profile: [Team name]</li>
+        </ul>
+    </div>
+
+    <!-- back button -->
+    <button mat-button class="back-button">
+        <mat-icon>arrow_back</mat-icon>
+        Back to Teams
+    </button>
+
+    <!-- page title -->
+    <div class="page-title">Team Profile</div>
+</div>
+
+<div class="container">
+    <div class="spacer"></div>
+    <div class="sidemenu-container">
+        <div class="card sidemenu">
+            <div class="avatar-container">
+                <div class="avatar">
+                    <img src="" alt="">
+                </div>
+            </div>
+            <div class="username">[Team Name]</div>
+            <div class="usertitle">[Team description]</div>
+            <div class="menu-items">
+                <div class="center" [class.active]="scrollElementId==='details'">
+                    <button mat-button (click)="scrollTo(detailsCard)">
+                        Details
+                    </button>
+                    <div class="scroll-indicator"></div>
+                </div>
+                <div class="center" [class.active]="scrollElementId==='members'">
+                    <button mat-button (click)="scrollTo(membersCard)">
+                        Members
+                    </button>
+                    <div class="scroll-indicator"></div>
+                </div>
+                <div class="center" [class.active]="scrollElementId==='transactions'">
+                    <button mat-button (click)="scrollTo(transactionsCard)">
+                        Transactions
+                    </button>
+                    <div class="scroll-indicator"></div>
+                </div>
+            </div>
+            <mat-divider></mat-divider>
+            <div class="center mt1">
+                <button mat-button class="w100 deactivate-user">
+                    <mat-icon>pause_circle_filled</mat-icon>
+                    Deactivate Team
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="scroll-container">
+
+        <div class="card">
+            <span class="anchor" id="details" #detailsCard></span>
+            <div class="card-header">
+                <mat-icon class="card-icon">group</mat-icon>
+                <div class="title">Details</div>
+                <div class="spacer"></div>
+                <button mat-button *ngIf="detailsForm.disabled" (click)="detailsForm.enable()">
+                    <mat-icon>edit</mat-icon> Edit
+                </button>
+                <button mat-button *ngIf="detailsForm.enabled" (click)="detailsForm.disable()">
+                    Cancel
+                </button>
+                <button mat-stroked-button *ngIf="detailsForm.enabled" (click)="saveDetailsForm()">
+                    Save Changes
+                </button>
+            </div>
+            <div class="card-content" *ngIf="detailsForm.disabled">
+                <div class="line-item">
+                    <div class="title upperCase">Team Name</div>
+                    <div class="detail">[Team Name]</div>
+                </div>
+
+                <div class="line-item">
+                    <div class="title upperCase">Team Description</div>
+                    <div class="detail block">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                        tempor
+                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                        ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                </div>
+            </div>
+            <div class="card-content" *ngIf="detailsForm.enabled">
+                <form>
+                    <mat-form-field appearance="fill" class="w100">
+                        <mat-label>Team Name</mat-label>
+                        <input matInput />
+                    </mat-form-field>
+                    <mat-form-field appearance="fill" class="w100">
+                        <mat-label>Team Description</mat-label>
+                        <input matInput />
+                    </mat-form-field>
+                </form>
+            </div>
+        </div>
+
+        <div class="card members">
+            <span class="anchor" id="members" #membersCard></span>
+            <div class="card-header">
+                <mat-icon class="card-icon">group</mat-icon>
+                <div class="title">members (5)</div>
+            </div>
+            <div class="card-content">
+                <span> The following user(s) are added to this team.</span>
+                <br>
+                <br>
+                <div class="line-item-box">
+                    <div class="line-avatar">BC</div>
+                    <div class="name">[User Name]</div>
+                    <div class="spacer"></div>
+                    <div>
+                        <div class="usercompany">[User Company]</div>
+                        <div class="usertitle">[User Title]</div>
+                    </div>
+                    <div class="spacer"></div>
+
+                    <div class="role">[Team Member Role]</div>
+                </div>
+                <div class="line-item-box">
+                    <div class="line-avatar">BC</div>
+                    <div class="name">[User Name]</div>
+                    <div class="spacer"></div>
+                    <div>
+                        <div class="usercompany">[User Company]</div>
+                        <div class="usertitle">[User Title]</div>
+                    </div>
+                    <div class="spacer"></div>
+
+                    <div class="role">[Team Member Role]</div>
+                </div>
+                <div class="line-item-box">
+                    <div class="line-avatar">BC</div>
+                    <div class="name">[User Name]</div>
+                    <div class="spacer"></div>
+                    <div>
+                        <div class="usercompany">[User Company]</div>
+                        <div class="usertitle">[User Title]</div>
+                    </div>
+                    <div class="spacer"></div>
+
+                    <div class="role">[Team Member Role]</div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="card transactions">
+            <span class="anchor" id="transactions" #transactionsCard></span>
+            <div class="card-header">
+                <mat-icon class="card-icon">article</mat-icon>
+                <div class="title">Transactions</div>
+            </div>
+            <div class="card-content">
+                <span> This team is added to below transactions</span>
+                <br>
+                <br>
+                <div class="line-item-box">
+                    <div class="name">[Transaction Name]</div>
+
+                    <button mat-icon-button class="active ml1">
+                        <mat-icon>open_in_new</mat-icon>
+                    </button>
+                    <div class="spacer"></div>
+                    <div class="transaction-type mr1">
+                        [Transaction Type]<br>
+                        <label class="subtype">[Transaction Subtype]</label>
+                    </div>
+                </div>
+                <div class="line-item-box">
+                    <div class="name">[Transaction Name]</div>
+
+                    <button mat-icon-button class="active ml1">
+                        <mat-icon>open_in_new</mat-icon>
+                    </button>
+                    <div class="spacer"></div>
+                    <div class="transaction-type mr1">
+                        [Transaction Type]<br>
+                        <label class="subtype">[Transaction Subtype]</label>
+                    </div>
+                </div>
+                <div class="line-item-box">
+                    <div class="name">[Transaction Name]</div>
+
+                    <button mat-icon-button class="active ml1">
+                        <mat-icon>open_in_new</mat-icon>
+                    </button>
+                    <div class="spacer"></div>
+                    <div class="transaction-type mr1">
+                        [Transaction Type]<br>
+                        <label class="subtype">[Transaction Subtype]</label>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="spacer"></div>
+</div>
