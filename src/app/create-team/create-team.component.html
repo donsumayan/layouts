@@ -1,21 +1,6 @@
-<div class="header fixed">
-    <!-- breadcrumb -->
-    <!-- <div class="breadcrumb clear">
-        <ul>
-            <li>Settings</li>
-            <li>Manage Users & Teams </li>
-            <li>User Profile: Enes Gundogdu</li>
-        </ul>
-    </div> -->
-
-    <!-- back button -->
-    <!-- <button mat-button class="back-button">
-        <mat-icon>arrow_back</mat-icon>
-        Back to Users
-    </button> -->
-
-    <!-- page title -->
+<div class="header fixed flex">
     <div class="page-title">User Profile</div>
+    <div class="spacer"></div>
 </div>
 
 <div class="container">
@@ -113,6 +98,74 @@
         <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]">
         </mat-paginator>
 
+
+        <p class="title add-user-button">Cant see desired user?
+            <button mat-flat-button>
+                Create user
+                <mat-icon>add_box</mat-icon>
+            </button>
+        </p>
+
+        <div class="card">
+            <div class="card-header">
+                Create User
+            </div>
+            email
+            fname
+            lname
+            phone
+            company
+            title
+            <div class="card-content">
+                <p>Enter user information (*)</p>
+                <form class="create-user-form">
+                    <mat-form-field appearance="fill" class="email">
+                        <mat-label>Email Address</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                    <mat-form-field appearance="fill" class="fname">
+                        <mat-label>First Name</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                    <mat-form-field appearance="fill" class="lname">
+                        <mat-label>Last Name</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                    <mat-form-field appearance="fill" class="phone">
+                        <mat-label>Phone Number</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill" class="company">
+                        <mat-label>Company Name</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill" class="title">
+                        <mat-label>Title</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+
+                    <div class="alertInfo">
+                        <mat-icon>info</mat-icon> This user ill be added with "Unlicensed User" security role.
+                    </div>
+
+                    <mat-form-field appearance="fill" class="teamRole">
+                        <mat-select placeholder="Team Member Role">
+                            <mat-option>1sad</mat-option>
+                            <mat-option>2sad</mat-option>
+                            <mat-option>3sad</mat-option>
+                            <mat-option>4sad</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </form>
+
+                <div class="flex">
+                    <div class="spacer"></div>
+                    <button mat-flat-button color="primary">Create user</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="right-container">
@@ -136,4 +189,11 @@
     </div>
 
     <div class="spacer"></div>
+</div>
+
+<div class="footer">
+    <button mat-button>Cancel</button>
+    <div class="spacer"></div>
+    <div class="info">Fields marked with (*) are required</div>
+    <button mat-flat-button color="primary">Create team</button>
 </div>
