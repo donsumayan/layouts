@@ -16,6 +16,7 @@ import { AppComponent } from './app.component';
 import { ViewUserComponent } from './view-user/view-user.component';
 import { CreateTeamComponent } from './create-team/create-team.component';
 import { ViewTeamComponent } from './view-team/view-team.component';
+import {MatChipsModule} from '@angular/material/chips';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { ViewTeamComponent } from './view-team/view-team.component';
     MatFormFieldModule,
     MatInputModule,
     MatCardModule,
+    MatChipsModule,
     MatButtonModule,
     MatIconModule,
     MatDividerModule,

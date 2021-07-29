@@ -10,10 +10,10 @@ export class ViewTeamComponent {
 
   scrollElementId = 'details';
   detailsForm = new FormGroup({})
+  membersForm = new FormGroup({})
+  removable = true;
 
-  constructor() {
-  }
-
+  users = ['One fish', 'Two Fish', 'Three Fish']
 
   scrollTo(element: HTMLDivElement | HTMLSpanElement) {
     element.scrollIntoView({
@@ -23,7 +23,15 @@ export class ViewTeamComponent {
   }
 
   saveDetailsForm() {
-    console.log(this.detailsForm.value)
+    this.detailsForm.disable()
+  }
+
+  saveMembersForm() {
+    this.membersForm.disable()
+  }
+
+  remove(name: string) {
+    this.users = this.users.filter(v => v !== name);
   }
 
 }

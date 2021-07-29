@@ -85,7 +85,7 @@
     color: rgba(255, 255, 255, 0.87);
 }
 
-.card {
+.card, .edit-list .item  {
     box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px rgba(0, 0, 0, 0.14), 0px 1px 5px rgba(0, 0, 0, 0.12);
     border-radius: 4px;
     padding: 1em 1em 2em;
@@ -510,4 +510,58 @@ span.anchor {
     height: 3px;
     width: 3px;
     background-color: blue; */
+}
+
+
+.edit-list {
+    display: grid;
+    gap: 1em;
+    grid-template-columns: 1fr;
+}
+
+.edit-list .item {
+    display: flex;
+    align-items: center;
+    padding: 1em;
+}
+
+.edit-list .item .avatar {
+    height: 32px;
+    width: 32px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.edit-list .item .username {
+    margin-left: 8px;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+}
+
+.edit-list .item .usercompany {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+}
+
+.edit-list .item .usertitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.edit-list .item .role-select {
+    background: #F5F5F5;
+    width: calc(220px - 2em);
+    height: 48px;
+    display: flex;
+    align-items: center;
+    padding: 0 1em;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
 }
