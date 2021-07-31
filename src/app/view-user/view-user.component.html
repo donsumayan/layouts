@@ -101,34 +101,34 @@
                         <div class="detail">me@enes.co</div>
                         <mat-icon class="active">check_circle</mat-icon>
                     </div>
-    
+
                     <div class="line-item">
                         <div class="title">EMAIL</div>
                         <div class="detail">me@enes.co</div>
                         <mat-icon>check_circle_outline</mat-icon>
                         <button mat-button class="detail active">Resend welcome email</button>
                     </div>
-    
+
                     <div class="line-item">
                         <div class="title">FIRST NAME</div>
                         <div class="detail">Enes</div>
                     </div>
-    
+
                     <div class="line-item">
                         <div class="title">LAST NAME</div>
                         <div class="detail">Gundogdu</div>
                     </div>
-    
+
                     <div class="line-item">
                         <div class="title">PHONE NUMBER</div>
                         <div class="detail">+1 (312) 543 - 6986</div>
                     </div>
-    
+
                     <div class="line-item">
                         <div class="title">COMPANY NAME</div>
                         <div class="detail">Upwork Inc.</div>
                     </div>
-    
+
                     <div class="line-item">
                         <div class="title">TITLE</div>
                         <div class="detail">Product Designer</div>
@@ -215,14 +215,14 @@
                         a SSO for this user? (*)
                     </label>
 
-                    <mat-radio-group formControlName="ssoEnabled" class="radios" >
+                    <mat-radio-group formControlName="ssoEnabled" class="radios">
                         <mat-card fxLayoutAlign="start center" style="cursor: pointer;">
                             <mat-radio-button color="accent" value="Yes">
                                 Yes
                             </mat-radio-button>
                         </mat-card>
                         <mat-card fxLayoutAlign="start center" style="cursor: pointer;">
-                            <mat-radio-button  value="No" color="accent" >
+                            <mat-radio-button value="No" color="accent">
                                 No
                             </mat-radio-button>
                         </mat-card>
@@ -239,7 +239,7 @@
             </div>
         </div>
 
-        <div class="card" #password>
+        <div class="card" #passwordCard>
             <span class="anchor" id="password"></span>
             <div class="card-header">
                 <mat-icon class="card-icon">lock</mat-icon>
@@ -259,7 +259,7 @@
             </div>
         </div>
 
-        <div class="card teams" #teams>
+        <div class="card teams" #teamsCard>
             <span class="anchor" id="teams"></span>
             <div class="card-header">
                 <mat-icon class="card-icon">group</mat-icon>
@@ -269,39 +269,63 @@
                 <label> This user is added to below teams</label>
                 <br>
                 <br>
-                <div class="line-item-box">
-                    <div class="name">[Team Name]</div>
+                <ng-container *ngFor="let team of teams; let index=index">
+                    <div class="line-item-box">
+                        <div class="name">{{team.teamName}}</div>
 
-                    <button mat-icon-button class="active ml1">
-                        <mat-icon>open_in_new</mat-icon>
-                    </button>
-                    <div class="spacer"></div>
-                    <button mat-button class="mr1">
-                        <mat-icon>remove_circle_outline</mat-icon>
-                        Remove from team
-                    </button>
-                    <mat-icon class="mr1">group</mat-icon>
-                    <div class="teamcount" class="mr1">6</div>
-                </div>
-                <div class="line-item-box">
-                    <div class="name">[Team Name]</div>
+                        <button mat-icon-button class="active ml1">
+                            <mat-icon>open_in_new</mat-icon>
+                        </button>
+                        <div class="spacer"></div>
+                        <button mat-button class="mr1">
+                            <mat-icon>remove_circle_outline</mat-icon>
+                            Remove from team
+                        </button>
+                        <mat-icon class="mr1">group</mat-icon>
+                        <div class="teamcount" class="mr1">6</div>
 
-                    <button mat-icon-button class="active ml1">
-                        <mat-icon>open_in_new</mat-icon>
-                    </button>
-                    <div class="spacer"></div>
-                    <button mat-button class="mr1">
-                        <mat-icon>remove_circle_outline</mat-icon>
-                        Remove from team
-                    </button>
-                    <mat-icon class="mr1">group</mat-icon>
-                    <div class="teamcount" class="mr1">6</div>
-                </div>
-
+                        <button mat-icon-button (click)="team.expanded= !team.expanded">
+                            <mat-icon *ngIf="!team.expanded">keyboard_arrow_down</mat-icon>
+                            <mat-icon *ngIf="team.expanded">keyboard_arrow_up</mat-icon>
+                        </button>
+                    </div>
+                    <div class="expanded-item-content" *ngIf="team.expanded">
+                        <div class="expanded-item-line">
+                            <div class="expanded-item-avatar">
+                                AB
+                            </div>
+                            <div>
+                                expanded
+                            </div>
+                            <div class="spacer"></div>
+                            <div>anything goes here</div>
+                        </div>
+                        <div class="expanded-item-line">
+                            <div class="expanded-item-avatar">
+                                AB
+                            </div>
+                            <div>
+                                expanded
+                            </div>
+                            <div class="spacer"></div>
+                            <div>anything goes here</div>
+                        </div>
+                        <div class="expanded-item-line">
+                            <div class="expanded-item-avatar">
+                                AB
+                            </div>
+                            <div>
+                                expanded
+                            </div>
+                            <div class="spacer"></div>
+                            <div>anything goes here</div>
+                        </div>
+                    </div>
+                </ng-container>
             </div>
         </div>
 
-        <div class="card transactions" #transactions>
+        <div class="card transactions" #transactionsCard>
             <span class="anchor" id="transactions"></span>
             <div class="card-header">
                 <mat-icon class="card-icon">article</mat-icon>

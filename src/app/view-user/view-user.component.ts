@@ -32,6 +32,13 @@ export class ViewUserComponent {
     this.securityForm.disable();
   }
 
+  teams = [
+    {expanded: false, teamName: '[Team Name]'},
+    {expanded: false, teamName: '[Team Name]'},
+    {expanded: false, teamName: '[Team Name]'},
+    {expanded: false, teamName: '[Team Name]'},
+  ]
+
 
   scrollTo(elementId: string) {
     
