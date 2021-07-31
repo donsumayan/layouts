@@ -88,48 +88,54 @@
                 <button mat-stroked-button *ngIf="generalForm.enabled" (click)="saveGeneralFormChanges()">
                     Save Changes
                 </button>
+                <button mat-icon-button (click)="foldGeneral = !foldGeneral">
+                    <mat-icon *ngIf="foldGeneral">keyboard_arrow_down</mat-icon>
+                    <mat-icon *ngIf="!foldGeneral">keyboard_arrow_up</mat-icon>
+                </button>
             </div>
-            <div class="card-content" *ngIf="generalForm.disabled">
-                <div class="line-item">
-                    <div class="title">EMAIL</div>
-                    <div class="detail">me@enes.co</div>
-                    <mat-icon class="active">check_circle</mat-icon>
-                </div>
 
-                <div class="line-item">
-                    <div class="title">EMAIL</div>
-                    <div class="detail">me@enes.co</div>
-                    <mat-icon>check_circle_outline</mat-icon>
-                    <button mat-button class="detail active">Resend welcome email</button>
-                </div>
+            <div class="card-content" *ngIf="!foldGeneral">
+                <ng-template [ngIf]="generalForm.disabled">
+                    <div class="line-item">
+                        <div class="title">EMAIL</div>
+                        <div class="detail">me@enes.co</div>
+                        <mat-icon class="active">check_circle</mat-icon>
+                    </div>
+    
+                    <div class="line-item">
+                        <div class="title">EMAIL</div>
+                        <div class="detail">me@enes.co</div>
+                        <mat-icon>check_circle_outline</mat-icon>
+                        <button mat-button class="detail active">Resend welcome email</button>
+                    </div>
+    
+                    <div class="line-item">
+                        <div class="title">FIRST NAME</div>
+                        <div class="detail">Enes</div>
+                    </div>
+    
+                    <div class="line-item">
+                        <div class="title">LAST NAME</div>
+                        <div class="detail">Gundogdu</div>
+                    </div>
+    
+                    <div class="line-item">
+                        <div class="title">PHONE NUMBER</div>
+                        <div class="detail">+1 (312) 543 - 6986</div>
+                    </div>
+    
+                    <div class="line-item">
+                        <div class="title">COMPANY NAME</div>
+                        <div class="detail">Upwork Inc.</div>
+                    </div>
+    
+                    <div class="line-item">
+                        <div class="title">TITLE</div>
+                        <div class="detail">Product Designer</div>
+                    </div>
+                </ng-template>
 
-                <div class="line-item">
-                    <div class="title">FIRST NAME</div>
-                    <div class="detail">Enes</div>
-                </div>
-
-                <div class="line-item">
-                    <div class="title">LAST NAME</div>
-                    <div class="detail">Gundogdu</div>
-                </div>
-
-                <div class="line-item">
-                    <div class="title">PHONE NUMBER</div>
-                    <div class="detail">+1 (312) 543 - 6986</div>
-                </div>
-
-                <div class="line-item">
-                    <div class="title">COMPANY NAME</div>
-                    <div class="detail">Upwork Inc.</div>
-                </div>
-
-                <div class="line-item">
-                    <div class="title">TITLE</div>
-                    <div class="detail">Product Designer</div>
-                </div>
-            </div>
-            <div class="card-content" *ngIf="generalForm.enabled">
-                <form [formGroup]="generalForm" class="generalForm">
+                <form [formGroup]="generalForm" class="generalForm" *ngIf="generalForm.enabled">
                     <mat-form-field appearance="fill" class="email">
                         <mat-label>Email</mat-label>
                         <input matInput formControlName="email" />

@@ -17,6 +17,7 @@ import { ViewUserComponent } from './view-user/view-user.component';
 import { CreateTeamComponent } from './create-team/create-team.component';
 import { ViewTeamComponent } from './view-team/view-team.component';
 import {MatChipsModule} from '@angular/material/chips';
+import { CardComponent } from './card/card.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import {MatChipsModule} from '@angular/material/chips';
     ViewUserComponent,
     ViewTeamComponent,
     CreateTeamComponent,
+    CardComponent,
   ],
   imports: [
     BrowserModule,

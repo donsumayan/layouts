@@ -8,7 +8,7 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./view-user.component.css']
 })
 export class ViewUserComponent {
-
+  foldGeneral = true;
   generalForm = new FormGroup({
     email: new FormControl(),
     fname: new FormControl(),
